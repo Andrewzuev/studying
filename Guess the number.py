@@ -1,9 +1,3 @@
-# Эта программа по отгадыванию чисел
-# вот
-
-
-
-
 import random 
 numbers = random.randint(1,100)
 def input_user():
@@ -21,5 +15,4 @@ while True:
         print(random.randrange(1,numbers))
     elif input_user == "больше":
         print(random.randrange(numbers, 100))
-
 
