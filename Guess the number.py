@@ -1,7 +1,8 @@
 import random 
-numbers = random.randint(1,100)
-def input_user():
-    pass
+low_numbers = 1
+hight_numbers = 100
+numbers = random.randint(low_numbers, hight_numbers)
+list_numbers = [numbers]
 
 print('Загадайте любое число, от 1 до 100. А я попробую отгадать')
 print(numbers) 
@@ -12,7 +13,21 @@ while True:
         print('Ураааа. у меня получилось.Спасибо за игру! ')
         break
     elif input_user == "меньше":
-        print(random.randrange(1,numbers))
+        hight_numbers = numbers
+        while numbers in list_numbers:
+            numbers = random.randint(low_numbers,hight_numbers) 
+            print("===>" + str(numbers))  
+        list_numbers.append(numbers) 
+        print(numbers)
+        print(list_numbers)
+        input_user = input("я угадал? ")
     elif input_user == "больше":
-        print(random.randrange(numbers, 100))
+        low_numbers = numbers
+        while numbers in list_numbers:
+            numbers = random.randint(low_numbers, hight_numbers)
+            print("===>" + str(numbers)) 
+        list_numbers.append(numbers)
+        print(numbers)
+        print(list_numbers)
+        input_user = input("я угадал? ")
 
